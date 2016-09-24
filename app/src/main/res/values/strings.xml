@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">EatAndGo</string>
+    <string name="app_name">Eat and Go</string>
+
+    <string name="view_navigation_open">Open</string>
+    <string name="view_navigation_close">Close</string>
+
+    <string name="food_weight_text_view">Food</string>
+    <string name="food_weight_edit_text_hint">add the grams</string>
+    <string name="feeding_time_text_view">Time</string>
+    <string name="feeding_time_edit_text_hint">add the time</string>
+
+    <string name="schedule">Schedule</string>
+    <string name="settings">Settings</string>
+    <string name="statistics">Statistics</string>
+    <string name="chart">Chart</string>
+    <string name="info">Information</string>
+    <string name="exit">Exit</string>
 </resources>
