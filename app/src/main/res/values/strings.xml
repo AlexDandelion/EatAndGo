@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Eat and Go</string>
+    <string name="app_name">Eat &amp; Go</string>
 
     <string name="view_navigation_open">Open</string>
     <string name="view_navigation_close">Close</string>
@@ -8,6 +8,12 @@
     <string name="food_weight_edit_text_hint">add the grams</string>
     <string name="feeding_time_text_view">Time</string>
     <string name="feeding_time_edit_text_hint">add the time</string>
+
+    <string name="settings_notifications">Notifications</string>
+    <string name="settings_password">Change password</string>
+    <string name="settings_name">"Pet's name"</string>
+    <string name="settings_age">"Pet's age"</string>
+    <string name="settings_photo">"Pet's photo"</string>
 
     <string name="schedule">Schedule</string>
     <string name="settings">Settings</string>
