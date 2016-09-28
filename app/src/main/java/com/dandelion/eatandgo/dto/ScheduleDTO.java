@@ -2,18 +2,28 @@ package com.dandelion.eatandgo.dto;
 
 public class ScheduleDTO {
 
-    private String title;
+    private String foodWeight;
+    private String feedingTime;
 
-    public ScheduleDTO(String title) {
+    public ScheduleDTO(String foodWeight, String feedingTime) {
 
-        this.title = title;
+        this.foodWeight = foodWeight;
+        this.feedingTime = feedingTime;
     }
 
-    public String getTitle() {
-        return title;
+    public String getFoodWeight() {
+        return foodWeight;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setFoodWeight(String foodWeight) {
+        this.foodWeight = foodWeight;
+    }
+
+    public String getFeedingTime() {
+        return feedingTime;
+    }
+
+    public void setFeedingTime(String feedingTime) {
+        this.feedingTime = feedingTime;
     }
 }

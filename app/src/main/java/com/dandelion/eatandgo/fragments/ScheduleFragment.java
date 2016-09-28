@@ -16,7 +16,10 @@ import com.dandelion.eatandgo.dto.ScheduleDTO;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ScheduleFragment extends Fragment {
+public class ScheduleFragment extends Fragment implements View.OnClickListener {
+
+    private RecyclerView recyclerView;
+    private List<ScheduleDTO> data;
 
     @Nullable
     @Override
@@ -24,7 +27,9 @@ public class ScheduleFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_schedule, container, false);
 
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        data = new ArrayList<>();
+
+        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new ScheduleListAdapter(createMockScheduleListData()));
 
@@ -32,10 +37,26 @@ public class ScheduleFragment extends Fragment {
     }
 
     private List<ScheduleDTO> createMockScheduleListData() {
-        List<ScheduleDTO> data = new ArrayList<>();
-        data.add(new ScheduleDTO("TestItem 1"));
-        data.add(new ScheduleDTO("TestItem 2"));
-
+        data.add(new ScheduleDTO("130", "9:00"));
+        data.add(new ScheduleDTO("200", "15:00"));
         return data;
+    }
+
+    private void changeRecyclerView(List<ScheduleDTO> data) {
+        recyclerView.setAdapter(new ScheduleListAdapter(data));
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.fab:
+                data.add(new ScheduleDTO("300", "21:00"));
+                changeRecyclerView(data);
+                break;
+            case R.id.cardView:
+                data.remove(data.size() - 1);
+                changeRecyclerView(data);
+                break;
+        }
     }
 }

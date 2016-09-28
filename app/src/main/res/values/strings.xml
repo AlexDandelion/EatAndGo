@@ -9,11 +9,16 @@
     <string name="feeding_time_text_view">Time</string>
     <string name="feeding_time_edit_text_hint">add the time</string>
 
-    <string name="settings_notifications">Notifications</string>
     <string name="settings_password">Change password</string>
-    <string name="settings_name">"Pet's name"</string>
-    <string name="settings_age">"Pet's age"</string>
-    <string name="settings_photo">"Pet's photo"</string>
+    <string name="settings_Theme">Change theme</string>
+    <string name="statistics_chart">Show the chart</string>
+
+    <string name="navigation_profile">"Pet's profile"</string>
+    <string name="navigation_name">Change name</string>
+    <string name="navigation_photo">Change photo</string>
+
+    <string name="authorized_field_id">Enter the ID</string>
+    <string name="authorized_field_password">Enter the password</string>
 
     <string name="schedule">Schedule</string>
     <string name="settings">Settings</string>
@@ -21,4 +26,5 @@
     <string name="chart">Chart</string>
     <string name="info">Information</string>
     <string name="exit">Exit</string>
+    <string name="entrance">Entrance</string>
 </resources>

@@ -25,12 +25,14 @@ public class ScheduleListAdapter extends
     public ScheduleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.schedule_item, parent, false);
+
         return new ScheduleViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ScheduleViewHolder holder, int position) {
-//        holder.title.setText(data.get(position).getTitle());
+        holder.foodWeight.setText(data.get(position).getFoodWeight());
+        holder.feedingTime.setText(data.get(position).getFeedingTime());
     }
 
     @Override
@@ -41,13 +43,15 @@ public class ScheduleListAdapter extends
     public static class ScheduleViewHolder extends RecyclerView.ViewHolder {
 
         private CardView cardView;
-        private TextView title;
+        private TextView foodWeight;
+        private TextView feedingTime;
 
         public ScheduleViewHolder(View itemView) {
             super(itemView);
 
             cardView = (CardView) itemView.findViewById(R.id.cardView);
-            title = (TextView) itemView.findViewById(R.id.title);
+            foodWeight = (TextView) itemView.findViewById(R.id.foodWeight);
+            feedingTime = (TextView) itemView.findViewById(R.id.feedingTime);
         }
     }
 }

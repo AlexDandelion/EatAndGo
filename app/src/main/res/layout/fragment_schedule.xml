@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/tab_fragment_layout_padding"
-    android:paddingTop="@dimen/tab_fragment_layout_padding">
+    android:background="@color/colorPrimaryWhite">
+
+    <TextView
+        android:id="@+id/scheduleHeaderText"
+        style="@style/FragmentsHeader"
+        android:text="@string/schedule" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/scheduleHeaderText" />
 
-</LinearLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@mipmap/ic_plus"
+        android:clickable="true"
+        app:backgroundTint="@color/colorPrimary" />
+
+</RelativeLayout>

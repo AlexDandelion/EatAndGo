@@ -1,96 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
-    android:orientation="vertical">
+    android:background="@color/colorPrimaryWhite">
 
-    <ScrollView
-        android:id="@+id/settingsScrollView"
+    <TextView
+        android:id="@+id/settingsHeaderText"
+        style="@style/FragmentsHeader"
+        android:text="@string/settings" />
+
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settingsHeaderText">
 
-        <TableLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/settings_layout_margin"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/settings_layout_margin"
-                android:orientation="vertical">
+            <LinearLayout style="@style/LinearLayoutSettingsTheme">
 
-                <LinearLayout style="@style/LinearLayoutSettingsTheme">
+                <TextView
+                    android:id="@+id/settingsPassword"
+                    style="@style/TextViewTheme"
+                    android:text="@string/settings_password" />
 
-                    <TextView
-                        android:id="@+id/settingsNotifications"
-                        style="@style/TextViewTheme"
-                        android:text="@string/settings_notifications" />
-
-                    <Switch
-                        android:id="@+id/settingsNotificationsSwitch"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1" />
-                </LinearLayout>
-
-                <LinearLayout style="@style/LinearLayoutSettingsTheme">
-
-                    <TextView
-                        android:id="@+id/settingsPassword"
-                        style="@style/TextViewTheme"
-                        android:text="@string/settings_password" />
-
-                    <ImageView
-                        android:id="@+id/settingsPasswordImage"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@mipmap/ic_lock_open" />
-                </LinearLayout>
-
-                <LinearLayout style="@style/LinearLayoutSettingsTheme">
-
-                    <TextView
-                        android:id="@+id/settingsName"
-                        style="@style/TextViewTheme"
-                        android:text="@string/settings_name" />
-
-                    <ImageView
-                        android:id="@+id/settingsNameImage"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@mipmap/ic_pen" />
-                </LinearLayout>
-
-                <LinearLayout style="@style/LinearLayoutSettingsTheme">
-
-                    <TextView
-                        android:id="@+id/settingsAge"
-                        style="@style/TextViewTheme"
-                        android:text="@string/settings_age" />
-
-                    <ImageView
-                        android:id="@+id/settingsAgeImage"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@mipmap/ic_cake_variant" />
-                </LinearLayout>
-
-                <LinearLayout style="@style/LinearLayoutSettingsTheme">
-
-                    <TextView
-                        android:id="@+id/settingsPhoto"
-                        style="@style/TextViewTheme"
-                        android:text="@string/settings_photo" />
-
-                    <ImageView
-                        android:id="@+id/settingsPhotoImage"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@mipmap/ic_cat" />
-                </LinearLayout>
+                <ImageView
+                    android:id="@+id/settingsPasswordImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_lock_open" />
             </LinearLayout>
-        </TableLayout>
-    </ScrollView>
 
-</FrameLayout>
+            <LinearLayout style="@style/LinearLayoutSettingsTheme">
+
+                <TextView
+                    android:id="@+id/settingsTheme"
+                    style="@style/TextViewTheme"
+                    android:text="@string/settings_Theme" />
+
+                <ImageView
+                    android:id="@+id/settingsThemeImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_pen" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/LinearLayoutSettingsTheme">
+
+                <TextView
+                    android:id="@+id/settingsInfo"
+                    style="@style/TextViewTheme"
+                    android:text="@string/info" />
+
+                <ImageView
+                    android:id="@+id/settingsAgeImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_information_outline" />
+            </LinearLayout>
+        </LinearLayout>
+    </TableLayout>
+
+</RelativeLayout>

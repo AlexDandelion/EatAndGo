@@ -1,17 +1,16 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="navigation_header_height">192dp</dimen>
+    <dimen name="fragments_header_height">30dp</dimen>
 
-    <dimen name="tab_indicator_height">6dp</dimen>
-    <dimen name="tab_fragment_layout_padding">5dp</dimen>
-
-    <dimen name="card_view_table_layout_padding">10dp</dimen>
-    <dimen name="card_view_titles_text_size">10pt</dimen>
+    <dimen name="card_view_titles_text_size">23sp</dimen>
+    <dimen name="card_view_text_size">17sp</dimen>
     <dimen name="card_view_elevation">2dp</dimen>
 
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <dimen name="base_layout_container_margin_top">55dp</dimen>
     <dimen name="settings_layout_margin">20dp</dimen>
     <dimen name="settings_internal_layouts_margin">7dp</dimen>
 

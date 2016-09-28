@@ -1,22 +1,25 @@
 package com.dandelion.eatandgo;
 
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
+import android.content.Intent;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
+import android.view.View;
 
-import com.dandelion.eatandgo.adapters.TabsFragmentAdapter;
+import com.dandelion.eatandgo.fragments.ScheduleFragment;
+import com.dandelion.eatandgo.fragments.SettingsFragment;
+import com.dandelion.eatandgo.fragments.StatisticsFragment;
+import com.mikepenz.materialdrawer.Drawer;
+import com.mikepenz.materialdrawer.DrawerBuilder;
+import com.mikepenz.materialdrawer.holder.DimenHolder;
+import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
+import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
-    private DrawerLayout drawerLayout;
-    private ViewPager viewPager;
+    private DrawerBuilder drawerBuilder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initialToolbar();
-        initNavigationView();
-        initTabs();
+        initDrawerBuilder();
+        switchFragments(new ScheduleFragment());
     }
 
     private void initialToolbar() {
@@ -33,49 +36,77 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitle(R.string.app_name);
     }
 
-    private void initNavigationView() {
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+    private void initDrawerBuilder() {
+        drawerBuilder = new DrawerBuilder(this);
+        drawerBuilder.withToolbar(toolbar);
+        drawerBuilder.withHeader(R.layout.navigation_header);
+        drawerBuilder.withHeaderHeight(DimenHolder.fromResource(R.dimen.navigation_header_height));
+        drawerBuilder.addDrawerItems(getDrawerItems());
+        drawerBuilder.withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
+            @Override
+            public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
+                switch ((int) drawerItem.getIdentifier()) {
+                    case Constants.DRAWER_ITEM_IDENTIFIER_SCHEDULE:
+                        switchFragments(new ScheduleFragment());
+                        break;
+                    case Constants.DRAWER_ITEM_IDENTIFIER_STATISTICS:
+                        switchFragments(new StatisticsFragment());
+                        break;
+                    case Constants.DRAWER_ITEM_IDENTIFIER_SETTINGS:
+                        switchFragments(new SettingsFragment());
+                        break;
+                    case Constants.DRAWER_ITEM_IDENTIFIER_EXIT:
+                        exit();
+                        break;
+                }
+                return true;
+            }
+        });
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout,
-                toolbar, R.string.view_navigation_open, R.string.view_navigation_close);
-
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.navigationView);
-        navigationView.setNavigationItemSelectedListener(
-                new NavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(MenuItem item) {
-                        drawerLayout.closeDrawers();
-                        switch (item.getItemId()) {
-                            case R.id.actionScheduleItem:
-                                viewPager.setCurrentItem(Constants.TAB_ONE);
-                                break;
-                            case R.id.actionSettingsItem:
-                                viewPager.setCurrentItem(Constants.TAB_TWO);
-                                break;
-                            case R.id.actionStatisticsItem:
-                                viewPager.setCurrentItem(Constants.TAB_THREE);
-                                break;
-                            case R.id.actionChartItem:
-                                viewPager.setCurrentItem(Constants.TAB_FOUR);
-                                break;
-                            case R.id.actionInfoItem:
-                                viewPager.setCurrentItem(Constants.TAB_FIVE);
-                                break;
-                        }
-                        return true;
-                    }
-                });
+        Drawer d = drawerBuilder.build();
+        d.getActionBarDrawerToggle();
+        drawerBuilder.withActionBarDrawerToggleAnimated(true);
     }
 
-    private void initTabs() {
-        viewPager = (ViewPager) findViewById(R.id.viewPager);
-        TabsFragmentAdapter adapter = new TabsFragmentAdapter(getSupportFragmentManager());
-        viewPager.setAdapter(adapter);
+    private IDrawerItem[] getDrawerItems() {
+        return new IDrawerItem[]{
+                new SecondaryDrawerItem()
+                        .withIdentifier(Constants.DRAWER_ITEM_IDENTIFIER_SCHEDULE)
+                        .withName(R.string.schedule)
+                        .withIcon(R.mipmap.ic_bone),
+                new SecondaryDrawerItem()
+                        .withIdentifier(Constants.DRAWER_ITEM_IDENTIFIER_STATISTICS)
+                        .withName(R.string.statistics)
+                        .withIcon(R.mipmap.ic_paw),
+                new SecondaryDrawerItem()
+                        .withIdentifier(Constants.DRAWER_ITEM_IDENTIFIER_SETTINGS)
+                        .withName(R.string.settings)
+                        .withIcon(R.mipmap.ic_settings),
+                new SecondaryDrawerItem()
+                        .withIdentifier(Constants.DRAWER_ITEM_IDENTIFIER_PROFILE)
+                        .withName(R.string.navigation_profile)
+                        .withIcon(R.mipmap.ic_cat)
+                        .withSubItems(
+                        new SecondaryDrawerItem()
+                                .withIdentifier(Constants.DRAWER_ITEM_IDENTIFIER_NAME)
+                                .withName(R.string.navigation_name),
+                        new SecondaryDrawerItem()
+                                .withIdentifier(Constants.DRAWER_ITEM_IDENTIFIER_PHOTO)
+                                .withName(R.string.navigation_photo)),
+                new SecondaryDrawerItem()
+                        .withIdentifier(Constants.DRAWER_ITEM_IDENTIFIER_EXIT)
+                        .withName(R.string.exit)
+                        .withIcon(R.mipmap.ic_close_octagon)
+        };
+    }
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabLayout);
-        tabLayout.setupWithViewPager(viewPager);
+    private void switchFragments(Fragment fragment) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.baseLayoutContainer, fragment).commit();
+    }
+
+    private void exit() {
+        Intent intent = new Intent(this, StartActivity.class);
+        startActivity(intent);
     }
 }
