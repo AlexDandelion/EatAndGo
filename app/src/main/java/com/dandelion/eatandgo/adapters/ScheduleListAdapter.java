@@ -8,16 +8,16 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.dandelion.eatandgo.R;
-import com.dandelion.eatandgo.dto.ScheduleDTO;
+import com.dandelion.eatandgo.model.Schedule;
 
 import java.util.List;
 
 public class ScheduleListAdapter extends
         RecyclerView.Adapter<ScheduleListAdapter.ScheduleViewHolder> {
 
-    private List<ScheduleDTO> data;
+    private List<Schedule> data;
 
-    public ScheduleListAdapter(List<ScheduleDTO> data) {
+    public ScheduleListAdapter(List<Schedule> data) {
         this.data = data;
     }
 
@@ -40,7 +40,8 @@ public class ScheduleListAdapter extends
         return data.size();
     }
 
-    public static class ScheduleViewHolder extends RecyclerView.ViewHolder {
+    public static class ScheduleViewHolder extends RecyclerView.ViewHolder
+            implements View.OnClickListener {
 
         private CardView cardView;
         private TextView foodWeight;
@@ -50,8 +51,15 @@ public class ScheduleListAdapter extends
             super(itemView);
 
             cardView = (CardView) itemView.findViewById(R.id.cardView);
+            cardView.setOnClickListener(this);
             foodWeight = (TextView) itemView.findViewById(R.id.foodWeight);
             feedingTime = (TextView) itemView.findViewById(R.id.feedingTime);
+        }
+
+        @Override
+        public void onClick(View view) {
+            int weight = Integer.parseInt(foodWeight.getText().toString());
+            foodWeight.setText("" + (weight + 10));
         }
     }
 }

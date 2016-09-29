@@ -1,11 +1,11 @@
-package com.dandelion.eatandgo.dto;
+package com.dandelion.eatandgo.model;
 
-public class ScheduleDTO {
+public class Schedule {
 
     private String foodWeight;
     private String feedingTime;
 
-    public ScheduleDTO(String foodWeight, String feedingTime) {
+    public Schedule(String foodWeight, String feedingTime) {
 
         this.foodWeight = foodWeight;
         this.feedingTime = feedingTime;

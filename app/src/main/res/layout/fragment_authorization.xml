@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/idField"
         android:layout_centerHorizontal="true"
-        android:layout_margin="5dp"
+        android:layout_margin="@dimen/authorized_item_layout_margin"
         android:text="@string/authorized_field_id"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/colorWhite" />
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_margin="5dp"
+        android:layout_margin="@dimen/authorized_item_layout_margin"
         android:background="@color/colorWhite"
         android:ems="10"
         android:gravity="center"
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/idField"
         android:layout_centerHorizontal="true"
-        android:layout_margin="5dp"
+        android:layout_margin="@dimen/authorized_item_layout_margin"
         android:text="@string/authorized_field_password"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/colorWhite" />
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/passwordTextView"
         android:layout_centerHorizontal="true"
-        android:layout_margin="5dp"
+        android:layout_margin="@dimen/authorized_item_layout_margin"
         android:background="@color/colorWhite"
         android:ems="10"
         android:gravity="center"
@@ -66,6 +66,5 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/passwordField"
         android:layout_centerHorizontal="true"
-        android:onClick="entranceInApp"
         android:text="@string/entrance" />
 </RelativeLayout>

@@ -16,6 +16,7 @@
     <string name="navigation_profile">"Pet's profile"</string>
     <string name="navigation_name">Change name</string>
     <string name="navigation_photo">Change photo</string>
+    <string name="navigation_email">Change email</string>
 
     <string name="authorized_field_id">Enter the ID</string>
     <string name="authorized_field_password">Enter the password</string>

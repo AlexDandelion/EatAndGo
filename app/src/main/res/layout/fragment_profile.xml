@@ -5,40 +5,26 @@
     android:background="@color/colorPrimaryWhite">
 
     <TextView
-        android:id="@+id/settingsHeaderText"
+        android:id="@+id/profileHeaderText"
         style="@style/FragmentsHeader"
-        android:text="@string/settings" />
+        android:text="@string/navigation_profile" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/profileHeaderText"
         android:layout_margin="@dimen/settings_layout_margin"
-        android:orientation="vertical"
-        android:layout_below="@id/settingsHeaderText">
+        android:orientation="vertical">
 
         <LinearLayout style="@style/LinearLayoutSettingsTheme">
 
             <TextView
-                android:id="@+id/settingsPassword"
+                android:id="@+id/profileName"
                 style="@style/TextViewTheme"
-                android:text="@string/settings_password" />
+                android:text="@string/navigation_name" />
 
             <ImageView
-                android:id="@+id/settingsPasswordImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/ic_lock_open" />
-        </LinearLayout>
-
-        <LinearLayout style="@style/LinearLayoutSettingsTheme">
-
-            <TextView
-                android:id="@+id/settingsTheme"
-                style="@style/TextViewTheme"
-                android:text="@string/settings_Theme" />
-
-            <ImageView
-                android:id="@+id/settingsThemeImage"
+                android:id="@+id/profileNameImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/ic_pen" />
@@ -47,15 +33,29 @@
         <LinearLayout style="@style/LinearLayoutSettingsTheme">
 
             <TextView
-                android:id="@+id/settingsInfo"
+                android:id="@+id/profilePhoto"
                 style="@style/TextViewTheme"
-                android:text="@string/info" />
+                android:text="@string/navigation_photo" />
 
             <ImageView
-                android:id="@+id/settingsAgeImage"
+                android:id="@+id/profilePhotoImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/ic_information_outline" />
+                android:src="@mipmap/ic_camera" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/LinearLayoutSettingsTheme">
+
+            <TextView
+                android:id="@+id/profileEmail"
+                style="@style/TextViewTheme"
+                android:text="@string/navigation_email" />
+
+            <ImageView
+                android:id="@+id/profileEmailImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_email_outline" />
         </LinearLayout>
     </LinearLayout>
 

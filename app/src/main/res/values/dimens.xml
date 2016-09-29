@@ -16,4 +16,6 @@
 
     <dimen name="schedule_item_layout_margin_horizontal">12dp</dimen>
     <dimen name="schedule_item_layout_margin_vertical">5dp</dimen>
+
+    <dimen name="authorized_item_layout_margin">5dp</dimen>
 </resources>

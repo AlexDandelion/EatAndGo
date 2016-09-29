@@ -2,6 +2,7 @@ package com.dandelion.eatandgo.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,7 +12,7 @@ import android.view.ViewGroup;
 
 import com.dandelion.eatandgo.R;
 import com.dandelion.eatandgo.adapters.ScheduleListAdapter;
-import com.dandelion.eatandgo.dto.ScheduleDTO;
+import com.dandelion.eatandgo.model.Schedule;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +20,7 @@ import java.util.List;
 public class ScheduleFragment extends Fragment implements View.OnClickListener {
 
     private RecyclerView recyclerView;
-    private List<ScheduleDTO> data;
+    private List<Schedule> data;
 
     @Nullable
     @Override
@@ -29,6 +30,9 @@ public class ScheduleFragment extends Fragment implements View.OnClickListener {
 
         data = new ArrayList<>();
 
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
+        fab.setOnClickListener(this);
+
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new ScheduleListAdapter(createMockScheduleListData()));
@@ -36,27 +40,19 @@ public class ScheduleFragment extends Fragment implements View.OnClickListener {
         return view;
     }
 
-    private List<ScheduleDTO> createMockScheduleListData() {
-        data.add(new ScheduleDTO("130", "9:00"));
-        data.add(new ScheduleDTO("200", "15:00"));
+    private List<Schedule> createMockScheduleListData() {
+        data.add(new Schedule("130", "9:00"));
+        data.add(new Schedule("200", "15:00"));
         return data;
     }
 
-    private void changeRecyclerView(List<ScheduleDTO> data) {
+    private void changeRecyclerView(List<Schedule> data) {
         recyclerView.setAdapter(new ScheduleListAdapter(data));
     }
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.fab:
-                data.add(new ScheduleDTO("300", "21:00"));
-                changeRecyclerView(data);
-                break;
-            case R.id.cardView:
-                data.remove(data.size() - 1);
-                changeRecyclerView(data);
-                break;
-        }
+        data.add(new Schedule("300", "21:00"));
+        changeRecyclerView(data);
     }
 }
