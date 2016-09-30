@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fifth">
+    android:background="@color/colorPrimaryWhite">
 
     <TextView
         android:id="@+id/statisticsHeaderText"
@@ -10,15 +10,53 @@
         android:text="@string/statistics" />
 
     <LinearLayout
+        android:id="@+id/statisticsMenuHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@id/statisticsHeaderText"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/statisticsChart"
-            style="@style/FragmentsHeader"
-            android:text="@string/statistics_chart" />
+            android:id="@+id/statisticsType"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center|start"
+            android:text="Name"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/card_view_titles_text_size" />
+
+        <TextView
+            android:id="@+id/statisticsWeight"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Weight"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/card_view_titles_text_size" />
+
+        <TextView
+            android:id="@+id/statisticsTime"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Time"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/card_view_titles_text_size" />
     </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/statisticsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/statisticsMenuHeader" />
+
+    <TextView
+        android:id="@+id/statisticsChart"
+        style="@style/FragmentsHeader"
+        android:layout_alignParentBottom="true"
+        android:text="@string/statistics_chart" />
 
 </RelativeLayout>

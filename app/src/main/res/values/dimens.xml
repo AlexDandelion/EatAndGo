@@ -6,6 +6,8 @@
     <dimen name="card_view_titles_text_size">23sp</dimen>
     <dimen name="card_view_text_size">17sp</dimen>
     <dimen name="card_view_elevation">2dp</dimen>
+    <dimen name="card_view_layout_margin_horizontal">12dp</dimen>
+    <dimen name="card_view_layout_margin_vertical">5dp</dimen>
 
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
@@ -13,9 +15,6 @@
     <dimen name="base_layout_container_margin_top">55dp</dimen>
     <dimen name="settings_layout_margin">20dp</dimen>
     <dimen name="settings_internal_layouts_margin">7dp</dimen>
-
-    <dimen name="schedule_item_layout_margin_horizontal">12dp</dimen>
-    <dimen name="schedule_item_layout_margin_vertical">5dp</dimen>
 
     <dimen name="authorized_item_layout_margin">5dp</dimen>
 </resources>

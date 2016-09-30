@@ -8,16 +8,16 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.dandelion.eatandgo.R;
-import com.dandelion.eatandgo.model.Schedule;
+import com.dandelion.eatandgo.model.ScheduleItem;
 
 import java.util.List;
 
 public class ScheduleListAdapter extends
         RecyclerView.Adapter<ScheduleListAdapter.ScheduleViewHolder> {
 
-    private List<Schedule> data;
+    private List<ScheduleItem> data;
 
-    public ScheduleListAdapter(List<Schedule> data) {
+    public ScheduleListAdapter(List<ScheduleItem> data) {
         this.data = data;
     }
 
@@ -50,7 +50,7 @@ public class ScheduleListAdapter extends
         public ScheduleViewHolder(View itemView) {
             super(itemView);
 
-            cardView = (CardView) itemView.findViewById(R.id.cardView);
+            cardView = (CardView) itemView.findViewById(R.id.scheduleCardView);
             cardView.setOnClickListener(this);
             foodWeight = (TextView) itemView.findViewById(R.id.foodWeight);
             feedingTime = (TextView) itemView.findViewById(R.id.feedingTime);
@@ -58,8 +58,7 @@ public class ScheduleListAdapter extends
 
         @Override
         public void onClick(View view) {
-            int weight = Integer.parseInt(foodWeight.getText().toString());
-            foodWeight.setText("" + (weight + 10));
+//            всплывающее меню с полями
         }
     }
 }

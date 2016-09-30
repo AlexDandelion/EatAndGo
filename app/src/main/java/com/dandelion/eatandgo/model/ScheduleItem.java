@@ -1,11 +1,11 @@
 package com.dandelion.eatandgo.model;
 
-public class Schedule {
+public class ScheduleItem {
 
     private String foodWeight;
     private String feedingTime;
 
-    public Schedule(String foodWeight, String feedingTime) {
+    public ScheduleItem(String foodWeight, String feedingTime) {
 
         this.foodWeight = foodWeight;
         this.feedingTime = feedingTime;

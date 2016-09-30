@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 import com.dandelion.eatandgo.R;
 import com.dandelion.eatandgo.adapters.ScheduleListAdapter;
-import com.dandelion.eatandgo.model.Schedule;
+import com.dandelion.eatandgo.model.ScheduleItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +20,7 @@ import java.util.List;
 public class ScheduleFragment extends Fragment implements View.OnClickListener {
 
     private RecyclerView recyclerView;
-    private List<Schedule> data;
+    private List<ScheduleItem> data;
 
     @Nullable
     @Override
@@ -33,26 +33,26 @@ public class ScheduleFragment extends Fragment implements View.OnClickListener {
         FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
         fab.setOnClickListener(this);
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        recyclerView = (RecyclerView) view.findViewById(R.id.scheduleRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new ScheduleListAdapter(createMockScheduleListData()));
 
         return view;
     }
 
-    private List<Schedule> createMockScheduleListData() {
-        data.add(new Schedule("130", "9:00"));
-        data.add(new Schedule("200", "15:00"));
+    private List<ScheduleItem> createMockScheduleListData() {
+        data.add(new ScheduleItem("130", "9:00"));
+        data.add(new ScheduleItem("200", "15:00"));
         return data;
     }
 
-    private void changeRecyclerView(List<Schedule> data) {
+    private void changeRecyclerView(List<ScheduleItem> data) {
         recyclerView.setAdapter(new ScheduleListAdapter(data));
     }
 
     @Override
     public void onClick(View view) {
-        data.add(new Schedule("300", "21:00"));
+        data.add(new ScheduleItem("300", "21:00"));
         changeRecyclerView(data);
     }
 }
