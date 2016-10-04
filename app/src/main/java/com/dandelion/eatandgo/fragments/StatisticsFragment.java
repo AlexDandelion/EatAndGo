@@ -2,7 +2,6 @@ package com.dandelion.eatandgo.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.dandelion.eatandgo.MainActivity;
 import com.dandelion.eatandgo.R;
 import com.dandelion.eatandgo.adapters.StatisticsListAdapter;
 import com.dandelion.eatandgo.model.StatisticsItem;
@@ -18,14 +16,9 @@ import com.dandelion.eatandgo.model.StatisticsItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StatisticsFragment extends Fragment implements View.OnClickListener {
+public class StatisticsFragment extends BaseFragment implements View.OnClickListener {
 
-    private RecyclerView recyclerView;
     private List<StatisticsItem> data;
-    private TextView headerType;
-    private TextView headerWeight;
-    private TextView headerTime;
-    private TextView chart;
 
     @Nullable
     @Override
@@ -35,17 +28,17 @@ public class StatisticsFragment extends Fragment implements View.OnClickListener
 
         data = new ArrayList<>();
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.statisticsRecyclerView);
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.statisticsRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new StatisticsListAdapter(createMockStatisticsListData()));
 
-        headerType = (TextView) view.findViewById(R.id.statisticsType);
+        TextView headerType = (TextView) view.findViewById(R.id.statisticsType);
         headerType.setOnClickListener(this);
-        headerWeight = (TextView) view.findViewById(R.id.statisticsWeight);
+        TextView headerWeight = (TextView) view.findViewById(R.id.statisticsWeight);
         headerWeight.setOnClickListener(this);
-        headerTime = (TextView) view.findViewById(R.id.statisticsTime);
+        TextView headerTime = (TextView) view.findViewById(R.id.statisticsTime);
         headerTime.setOnClickListener(this);
-        chart = (TextView) view.findViewById(R.id.statisticsChart);
+        TextView chart = (TextView) view.findViewById(R.id.statisticsChart);
         chart.setOnClickListener(this);
 
         return view;
@@ -68,7 +61,7 @@ public class StatisticsFragment extends Fragment implements View.OnClickListener
             case R.id.statisticsTime:
                 break;
             case R.id.statisticsChart:
-                ((MainActivity) getActivity()).switchFragments(new ChartFragment());
+                switchFragments(new ChartFragment());
                 break;
         }
     }

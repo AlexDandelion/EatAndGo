@@ -17,7 +17,7 @@ import com.dandelion.eatandgo.model.ScheduleItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ScheduleFragment extends Fragment implements View.OnClickListener {
+public class ScheduleFragment extends BaseFragment implements View.OnClickListener {
 
     private RecyclerView recyclerView;
     private List<ScheduleItem> data;

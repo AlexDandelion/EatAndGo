@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 import com.dandelion.eatandgo.R;
 
-public class PetProfileFragment extends Fragment {
+public class PetProfileFragment extends BaseFragment {
 
     @Nullable
     @Override

@@ -2,17 +2,16 @@ package com.dandelion.eatandgo.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.dandelion.eatandgo.MainActivity;
+import com.dandelion.eatandgo.EatAndGoApp;
 import com.dandelion.eatandgo.R;
 
-public class AuthorizationFragment extends Fragment {
+public class AuthorizationFragment extends BaseFragment {
 
     private EditText idField;
     private EditText passwordField;
@@ -32,9 +31,9 @@ public class AuthorizationFragment extends Fragment {
             public void onClick(View view) {
                 if (idField.getText().toString().equals("11")
                         && passwordField.getText().toString().equals("11")) {
-                    ((MainActivity) getActivity()).switchFragments(new ScheduleFragment());
-                    ((MainActivity) getActivity()).setIsAuthorized(true);
-                    ((MainActivity) getActivity()).showToolBar();
+                    switchFragments(new ScheduleFragment());
+                    showToolBar();
+                    EatAndGoApp.getInstance().setIsAuthorized(true);
                 }
             }
         });

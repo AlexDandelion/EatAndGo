@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="authorized_field_id">Введите ID код</string>
+    <string name="authorized_field_password">Введите пароль</string>
+    <string name="chart">График</string>
+    <string name="entrance">Вход</string>
+    <string name="exit">Выход</string>
+    <string name="feeding_time_edit_text_hint">введите время</string>
+    <string name="feeding_time_text_view">Время</string>
+    <string name="food_weight_edit_text_hint">введите граммы</string>
+    <string name="food_weight_text_view">Еда</string>
+    <string name="info">Информация</string>
+    <string name="navigation_email">Изменить email</string>
+    <string name="navigation_name">Изменить имя</string>
+    <string name="navigation_photo">Изменить фото</string>
+    <string name="navigation_profile">Профиль питомца</string>
+    <string name="schedule">Расписание</string>
+    <string name="settings">Настройки</string>
+    <string name="settings_Theme">Изменить оформление</string>
+    <string name="settings_password">Изменить пароль</string>
+    <string name="statistics">Статистика</string>
+    <string name="statistics_chart">Отобразить график</string>
+    <string name="view_navigation_close">Закрыто</string>
+    <string name="view_navigation_open">Открыто</string>
+    <string name="statistics_name">Имя</string>
+    <string name="statistics_period">Период</string>
+    <string name="statistics_weight">Вес</string>
+</resources>

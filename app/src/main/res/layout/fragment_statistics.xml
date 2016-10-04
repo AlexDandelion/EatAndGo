@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryWhite">
+    android:background="@mipmap/background">
 
     <TextView
         android:id="@+id/statisticsHeaderText"
@@ -14,16 +14,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/statisticsHeaderText"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@color/colorWhite">
 
         <TextView
             android:id="@+id/statisticsType"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center|start"
-            android:text="Name"
-            android:textColor="@color/colorWhite"
+            android:gravity="center"
+            android:text="@string/statistics_name"
             android:textSize="@dimen/card_view_titles_text_size" />
 
         <TextView
@@ -32,8 +32,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Weight"
-            android:textColor="@color/colorWhite"
+            android:text="@string/statistics_weight"
             android:textSize="@dimen/card_view_titles_text_size" />
 
         <TextView
@@ -42,16 +41,17 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Time"
-            android:textColor="@color/colorWhite"
+            android:text="@string/statistics_period"
             android:textSize="@dimen/card_view_titles_text_size" />
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/statisticsRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/statisticsMenuHeader" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/statisticsMenuHeader"
+        android:alpha="0.7"
+        android:background="@color/colorWhite" />
 
     <TextView
         android:id="@+id/statisticsChart"

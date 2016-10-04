@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 import com.dandelion.eatandgo.R;
 
-public class InfoFragment extends Fragment {
+public class InfoFragment extends BaseFragment {
 
     @Nullable
     @Override

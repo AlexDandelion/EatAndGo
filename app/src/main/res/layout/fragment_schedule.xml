@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryWhite">
+    android:background="@mipmap/background">
 
     <TextView
         android:id="@+id/scheduleHeaderText"
@@ -26,6 +26,6 @@
         android:layout_margin="@dimen/fab_margin"
         android:src="@mipmap/ic_plus"
         android:clickable="true"
-        app:backgroundTint="@color/colorPrimary" />
+        app:backgroundTint="@color/colorWhite" />
 
 </RelativeLayout>
