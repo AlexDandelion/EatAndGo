@@ -1,8 +1,5 @@
 package com.dandelion.eatandgo;
 
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.pm.ActivityInfo;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -29,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private Drawer drawer;
     private DrawerLayout drawerLayout;
+    private AccountHeaderBuilder accountHeaderBuilder;
     private AccountHeader accountHeader;
 
     @Override
@@ -36,13 +34,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
         initialToolbar();
         initialAccountHeader();
         initDrawerBuilder();
 
-        if (isAuthorized()) {
+        if (EatAndGoApp.getInstance().isAuthorized()) {
             switchFragments(new ScheduleFragment());
         } else {
             hideToolBar();
@@ -52,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void initialToolbar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(R.string.app_name);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 
     public void hideToolBar() {
@@ -67,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initialAccountHeader() {
-        accountHeader = new AccountHeaderBuilder()
+        accountHeaderBuilder = new AccountHeaderBuilder()
                 .withActivity(this)
                 .withHeaderBackground(R.color.colorPrimary)
                 .addProfiles(
@@ -82,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
                         return false;
                     }
                 })
-                .build();
+                .withSelectionListEnabledForSingleProfile(false);
+        accountHeader = accountHeaderBuilder.build();
 
     }
 
@@ -115,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                         switchFragments(new PetProfileFragment());
                         break;
                     case Constants.DRAWER_ITEM_IDENTIFIER_EXIT:
-                        outFromApp();
+                        logOut();
                         break;
                 }
                 drawer.closeDrawer();
@@ -149,27 +146,15 @@ public class MainActivity extends AppCompatActivity {
         };
     }
 
-    private boolean isAuthorized() {
-        return getSharedPreferences(Constants.USER_PREFERENCE, Context.MODE_PRIVATE)
-                .getBoolean(Constants.USER_IS_AUTHORIZED, true);
-    }
-
-    public void setIsAuthorized(boolean isAuthorized) {
-        SharedPreferences.Editor editor = getSharedPreferences(Constants.USER_PREFERENCE,
-                Context.MODE_PRIVATE).edit();
-        editor.putBoolean(Constants.USER_IS_AUTHORIZED, isAuthorized);
-        editor.commit();
-    }
-
     public void switchFragments(Fragment fragment) {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.baseLayoutContainer, fragment).commit();
     }
 
-    private void outFromApp() {
+    private void logOut() {
         switchFragments(new AuthorizationFragment());
         hideToolBar();
-        setIsAuthorized(false);
+        EatAndGoApp.getInstance().setIsAuthorized(false);
     }
 
 //    @Override
