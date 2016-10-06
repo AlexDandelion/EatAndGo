@@ -8,7 +8,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.dandelion.eatandgo.fragments.AuthorizationFragment;
-import com.dandelion.eatandgo.fragments.PetProfileFragment;
 import com.dandelion.eatandgo.fragments.ScheduleFragment;
 import com.dandelion.eatandgo.fragments.SettingsFragment;
 import com.dandelion.eatandgo.fragments.StatisticsFragment;
@@ -108,9 +107,6 @@ public class MainActivity extends AppCompatActivity {
                     case Constants.DRAWER_ITEM_IDENTIFIER_SETTINGS:
                         switchFragments(new SettingsFragment());
                         break;
-                    case Constants.DRAWER_ITEM_IDENTIFIER_PROFILE:
-                        switchFragments(new PetProfileFragment());
-                        break;
                     case Constants.DRAWER_ITEM_IDENTIFIER_EXIT:
                         logOut();
                         break;
@@ -135,10 +131,6 @@ public class MainActivity extends AppCompatActivity {
                         .withIdentifier(Constants.DRAWER_ITEM_IDENTIFIER_SETTINGS)
                         .withName(R.string.settings)
                         .withIcon(R.mipmap.ic_settings),
-                new SecondaryDrawerItem()
-                        .withIdentifier(Constants.DRAWER_ITEM_IDENTIFIER_PROFILE)
-                        .withName(R.string.navigation_profile)
-                        .withIcon(R.mipmap.ic_cat),
                 new SecondaryDrawerItem()
                         .withIdentifier(Constants.DRAWER_ITEM_IDENTIFIER_EXIT)
                         .withName(R.string.exit)

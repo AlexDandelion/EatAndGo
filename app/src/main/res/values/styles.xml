@@ -8,7 +8,7 @@
         <item name="colorControlNormal">@color/colorWhite</item>
     </style>
 
-    <style name="TextViewTheme">
+    <style name="TableTextViewTheme">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:gravity">center|start</item>
@@ -17,18 +17,13 @@
         <item name="android:textColor">@color/colorWhite</item>
     </style>
 
-    <style name="FragmentsHeader" parent="TextViewTheme">
+    <style name="HeaderTextViewTheme">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/fragments_header_height</item>
         <item name="android:background">@color/colorPrimary</item>
         <item name="android:gravity">center</item>
-    </style>
-
-    <style name="LinearLayoutSettingsTheme">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:orientation">horizontal</item>
-        <item name="android:layout_margin">@dimen/settings_internal_layouts_margin</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:textColor">@color/colorWhite</item>
     </style>
 
 </resources>

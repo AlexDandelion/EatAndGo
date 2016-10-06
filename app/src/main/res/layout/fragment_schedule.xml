@@ -7,7 +7,7 @@
 
     <TextView
         android:id="@+id/scheduleHeaderText"
-        style="@style/FragmentsHeader"
+        style="@style/HeaderTextViewTheme"
         android:text="@string/schedule" />
 
     <android.support.v7.widget.RecyclerView
@@ -17,7 +17,7 @@
         android:layout_below="@id/scheduleHeaderText" />
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/scheduleFloActBut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

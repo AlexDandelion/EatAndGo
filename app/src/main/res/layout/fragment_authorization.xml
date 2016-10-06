@@ -2,25 +2,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
-
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:src="@mipmap/logo" />
+    android:background="@mipmap/authorization">
 
     <TextView
         android:id="@+id/authorizedTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/idField"
         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:layout_margin="@dimen/authorized_item_layout_margin"
-        android:text="@string/authorized_field_id"
+        android:text="@string/email"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/colorWhite" />
 
@@ -28,8 +19,8 @@
         android:id="@+id/idField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/authorizedTextView"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:layout_margin="@dimen/authorized_item_layout_margin"
         android:background="@mipmap/substrate"
         android:ems="10"
@@ -43,7 +34,7 @@
         android:layout_below="@+id/idField"
         android:layout_centerHorizontal="true"
         android:layout_margin="@dimen/authorized_item_layout_margin"
-        android:text="@string/authorized_field_password"
+        android:text="@string/password"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/colorWhite" />
 
@@ -59,12 +50,25 @@
         android:gravity="center"
         android:inputType="textPassword" />
 
-    <Button
+    <ImageButton
         android:id="@+id/entranceButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/passwordField"
         android:layout_centerHorizontal="true"
-        android:text="@string/entrance" />
+        android:layout_margin="@dimen/authorized_item_layout_margin"
+        android:background="@mipmap/entrance_button" />
+
+    <TextView
+        android:id="@+id/registrationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/authorized_item_layout_margin"
+        android:text="@string/registration"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorPrimary" />
 
 </RelativeLayout>

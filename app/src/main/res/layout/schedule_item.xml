@@ -38,7 +38,6 @@
                     android:layout_weight="1"
                     android:gravity="center|start"
                     android:text="@string/food_weight_text_view"
-                    android:textColor="@color/colorBlack"
                     android:textSize="@dimen/card_view_titles_text_size" />
 
                 <ImageView
@@ -53,7 +52,6 @@
                     android:layout_weight="1"
                     android:gravity="center|start"
                     android:text="@string/feeding_time_text_view"
-                    android:textColor="@color/colorBlack"
                     android:textSize="@dimen/card_view_titles_text_size" />
 
             </LinearLayout>
@@ -69,7 +67,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:hint="@string/food_weight_edit_text_hint"
+                    android:hint="@string/grams"
                     android:textSize="@dimen/card_view_text_size" />
 
                 <TextView
@@ -78,7 +76,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:hint="@string/feeding_time_edit_text_hint"
+                    android:hint="@string/hours"
                     android:textSize="@dimen/card_view_text_size" />
             </LinearLayout>
         </LinearLayout>

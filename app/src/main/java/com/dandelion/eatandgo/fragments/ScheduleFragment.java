@@ -3,7 +3,6 @@ package com.dandelion.eatandgo.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -30,7 +29,7 @@ public class ScheduleFragment extends BaseFragment implements View.OnClickListen
 
         data = new ArrayList<>();
 
-        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.scheduleFloActBut);
         fab.setOnClickListener(this);
 
         recyclerView = (RecyclerView) view.findViewById(R.id.scheduleRecyclerView);
@@ -52,7 +51,7 @@ public class ScheduleFragment extends BaseFragment implements View.OnClickListen
 
     @Override
     public void onClick(View view) {
-        data.add(new ScheduleItem("300", "21:00"));
+        data.add(new ScheduleItem("add the grams", "add the time"));
         changeRecyclerView(data);
     }
 }

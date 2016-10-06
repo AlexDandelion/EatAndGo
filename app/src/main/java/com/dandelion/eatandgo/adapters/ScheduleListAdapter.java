@@ -7,7 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.dandelion.eatandgo.Constants;
 import com.dandelion.eatandgo.R;
+import com.dandelion.eatandgo.fragments.DialogScheduleFragment;
 import com.dandelion.eatandgo.model.ScheduleItem;
 
 import java.util.List;
@@ -58,7 +60,8 @@ public class ScheduleListAdapter extends
 
         @Override
         public void onClick(View view) {
-//            всплывающее меню с полями
+//            new DialogScheduleFragment().show(getActivity().getSupportFragmentManager(),
+//                    Constants.DIALOG_SCHEDULE);
         }
     }
 }

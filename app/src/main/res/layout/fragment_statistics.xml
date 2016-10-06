@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/background">
 
     <TextView
         android:id="@+id/statisticsHeaderText"
-        style="@style/FragmentsHeader"
+        style="@style/HeaderTextViewTheme"
         android:text="@string/statistics" />
 
     <LinearLayout
@@ -14,8 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/statisticsHeaderText"
-        android:orientation="horizontal"
-        android:background="@color/colorWhite">
+        android:background="@color/colorWhite"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/statisticsType"
@@ -24,6 +25,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/statistics_name"
+            android:textColor="@color/colorPrimary"
             android:textSize="@dimen/card_view_titles_text_size" />
 
         <TextView
@@ -33,6 +35,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/statistics_weight"
+            android:textColor="@color/colorPrimary"
             android:textSize="@dimen/card_view_titles_text_size" />
 
         <TextView
@@ -42,6 +45,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/statistics_period"
+            android:textColor="@color/colorPrimary"
             android:textSize="@dimen/card_view_titles_text_size" />
     </LinearLayout>
 
@@ -49,14 +53,18 @@
         android:id="@+id/statisticsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/statisticsMenuHeader"
-        android:alpha="0.7"
-        android:background="@color/colorWhite" />
+        android:layout_below="@id/statisticsMenuHeader" />
 
-    <TextView
-        android:id="@+id/statisticsChart"
-        style="@style/FragmentsHeader"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/statisticsFloActBut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="@string/statistics_chart" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/fab_margin"
+        android:clickable="true"
+        android:src="@mipmap/ic_chart_line"
+        app:backgroundTint="@color/colorWhite" />
 
 </RelativeLayout>

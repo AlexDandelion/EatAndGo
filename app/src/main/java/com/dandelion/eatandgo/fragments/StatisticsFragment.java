@@ -2,6 +2,7 @@ package com.dandelion.eatandgo.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -38,8 +39,9 @@ public class StatisticsFragment extends BaseFragment implements View.OnClickList
         headerWeight.setOnClickListener(this);
         TextView headerTime = (TextView) view.findViewById(R.id.statisticsTime);
         headerTime.setOnClickListener(this);
-        TextView chart = (TextView) view.findViewById(R.id.statisticsChart);
-        chart.setOnClickListener(this);
+
+        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.statisticsFloActBut);
+        fab.setOnClickListener(this);
 
         return view;
     }
@@ -60,7 +62,7 @@ public class StatisticsFragment extends BaseFragment implements View.OnClickList
                 break;
             case R.id.statisticsTime:
                 break;
-            case R.id.statisticsChart:
+            case R.id.statisticsFloActBut:
                 switchFragments(new ChartFragment());
                 break;
         }

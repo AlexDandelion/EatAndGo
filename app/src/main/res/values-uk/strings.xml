@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="authorized_field_id">Введите ID код</string>
-    <string name="authorized_field_password">Введіть пароль</string>
+    <string name="password">Пароль</string>
     <string name="chart">Графік</string>
     <string name="entrance">Вхід</string>
     <string name="exit">Вихід</string>
-    <string name="feeding_time_edit_text_hint">введіть час</string>
+    <string name="hours">введіть час</string>
     <string name="feeding_time_text_view">Час</string>
-    <string name="food_weight_edit_text_hint">введіть грами</string>
+    <string name="grams">введіть грами</string>
     <string name="schedule">Розклад</string>
     <string name="statistics">Статистика</string>
     <string name="food_weight_text_view">Їжа</string>
-    <string name="info">Інформація</string>
+    <string name="information">Інформація</string>
     <string name="navigation_email">Змінити email</string>
-    <string name="navigation_name">Змінити ім\'я</string>
-    <string name="navigation_photo">Змінити фото</string>
-    <string name="navigation_profile">Профіль вихованця</string>
+    <string name="change_name">Змінити ім\'я</string>
+    <string name="change_photo">Змінити фото</string>
+    <string name="profile">Профіль вихованця</string>
     <string name="settings">Налаштування</string>
     <string name="settings_Theme">Змінити оформлення</string>
-    <string name="settings_password">Змінити пароль</string>
+    <string name="change_password">Змінити пароль</string>
     <string name="statistics_chart">Відобразити графік</string>
     <string name="view_navigation_open">Відкрито</string>
     <string name="view_navigation_close">Закрито</string>
     <string name="statistics_name">Ім\'я</string>
     <string name="statistics_period">Період</string>
     <string name="statistics_weight">Вага</string>
+    <string name="registration">Реєстрація</string>
+    <string name="change_current_pass">Введіть поточний пароль</string>
+    <string name="change_new_pass">Введіть новий пароль</string>
+    <string name="change_new_pass_again">Продублюйте новий пароль</string>
+    <string name="submit">Надіслати</string>
 </resources>
