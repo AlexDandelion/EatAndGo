@@ -1,4 +1,4 @@
-package com.dandelion.eatandgo.model;
+package com.dandelion.eatandgo.models;
 
 public class ScheduleItem {
 

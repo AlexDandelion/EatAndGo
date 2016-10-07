@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.dandelion.eatandgo.R;
-import com.dandelion.eatandgo.model.StatisticsItem;
+import com.dandelion.eatandgo.models.StatisticsItem;
 
 import java.util.List;
 
@@ -34,6 +34,7 @@ public class StatisticsListAdapter extends
         holder.type.setText(data.get(position).getType());
         holder.weight.setText(data.get(position).getWeight());
         holder.time.setText(data.get(position).getTime());
+        holder.date.setText(data.get(position).getDate());
     }
 
     @Override
@@ -47,6 +48,7 @@ public class StatisticsListAdapter extends
         private TextView type;
         private TextView weight;
         private TextView time;
+        private TextView date;
 
         public StatisticsViewHolder(View itemView) {
             super(itemView);
@@ -55,6 +57,7 @@ public class StatisticsListAdapter extends
             type = (TextView) itemView.findViewById(R.id.statisticsType);
             weight = (TextView) itemView.findViewById(R.id.statisticsWeight);
             time = (TextView) itemView.findViewById(R.id.statisticsTime);
+            date = (TextView) itemView.findViewById(R.id.statisticsDate);
         }
     }
 }

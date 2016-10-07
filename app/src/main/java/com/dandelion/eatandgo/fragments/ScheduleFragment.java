@@ -3,20 +3,23 @@ package com.dandelion.eatandgo.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.dandelion.eatandgo.listeners.CallbackListener;
 import com.dandelion.eatandgo.R;
 import com.dandelion.eatandgo.adapters.ScheduleListAdapter;
-import com.dandelion.eatandgo.model.ScheduleItem;
+import com.dandelion.eatandgo.models.ScheduleItem;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ScheduleFragment extends BaseFragment implements View.OnClickListener {
+public class ScheduleFragment extends BaseFragment
+        implements View.OnClickListener, CallbackListener {
 
     private RecyclerView recyclerView;
     private List<ScheduleItem> data;
@@ -34,7 +37,7 @@ public class ScheduleFragment extends BaseFragment implements View.OnClickListen
 
         recyclerView = (RecyclerView) view.findViewById(R.id.scheduleRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setAdapter(new ScheduleListAdapter(createMockScheduleListData()));
+        recyclerView.setAdapter(new ScheduleListAdapter(this, createMockScheduleListData()));
 
         return view;
     }
@@ -46,12 +49,17 @@ public class ScheduleFragment extends BaseFragment implements View.OnClickListen
     }
 
     private void changeRecyclerView(List<ScheduleItem> data) {
-        recyclerView.setAdapter(new ScheduleListAdapter(data));
+        recyclerView.setAdapter(new ScheduleListAdapter(this, data));
     }
 
     @Override
     public void onClick(View view) {
         data.add(new ScheduleItem("add the grams", "add the time"));
         changeRecyclerView(data);
+    }
+
+    @Override
+    public FragmentManager callback() {
+        return getActivity().getSupportFragmentManager();
     }
 }

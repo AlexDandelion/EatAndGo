@@ -8,18 +8,21 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.dandelion.eatandgo.Constants;
-import com.dandelion.eatandgo.R;
 import com.dandelion.eatandgo.fragments.DialogScheduleFragment;
-import com.dandelion.eatandgo.model.ScheduleItem;
+import com.dandelion.eatandgo.listeners.CallbackListener;
+import com.dandelion.eatandgo.R;
+import com.dandelion.eatandgo.models.ScheduleItem;
 
 import java.util.List;
 
 public class ScheduleListAdapter extends
         RecyclerView.Adapter<ScheduleListAdapter.ScheduleViewHolder> {
 
+    private static CallbackListener listener;
     private List<ScheduleItem> data;
 
-    public ScheduleListAdapter(List<ScheduleItem> data) {
+    public ScheduleListAdapter(CallbackListener listener, List<ScheduleItem> data) {
+        ScheduleListAdapter.listener = listener;
         this.data = data;
     }
 
@@ -43,7 +46,7 @@ public class ScheduleListAdapter extends
     }
 
     public static class ScheduleViewHolder extends RecyclerView.ViewHolder
-            implements View.OnClickListener {
+            implements View.OnLongClickListener {
 
         private CardView cardView;
         private TextView foodWeight;
@@ -53,15 +56,16 @@ public class ScheduleListAdapter extends
             super(itemView);
 
             cardView = (CardView) itemView.findViewById(R.id.scheduleCardView);
-            cardView.setOnClickListener(this);
+            cardView.setOnLongClickListener(this);
             foodWeight = (TextView) itemView.findViewById(R.id.foodWeight);
             feedingTime = (TextView) itemView.findViewById(R.id.feedingTime);
         }
 
         @Override
-        public void onClick(View view) {
-//            new DialogScheduleFragment().show(getActivity().getSupportFragmentManager(),
-//                    Constants.DIALOG_SCHEDULE);
+        public boolean onLongClick(View view) {
+            new DialogScheduleFragment().show(listener.callback(),
+                    Constants.DIALOG_SCHEDULE);
+            return true;
         }
     }
 }

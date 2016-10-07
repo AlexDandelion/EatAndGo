@@ -2,23 +2,19 @@
 <resources>
     <string name="password">Пароль</string>
     <string name="chart">График</string>
-    <string name="entrance">Вход</string>
     <string name="exit">Выход</string>
     <string name="hours">введите время</string>
     <string name="feeding_time_text_view">Время</string>
     <string name="grams">введите граммы</string>
     <string name="food_weight_text_view">Еда</string>
     <string name="information">Информация</string>
-    <string name="navigation_email">Изменить email</string>
     <string name="change_name">Изменить имя</string>
     <string name="change_photo">Изменить фото</string>
     <string name="profile">Профиль питомца</string>
     <string name="schedule">Расписание</string>
     <string name="settings">Настройки</string>
-    <string name="settings_Theme">Изменить оформление</string>
     <string name="change_password">Изменить пароль</string>
     <string name="statistics">Статистика</string>
-    <string name="statistics_chart">Отобразить график</string>
     <string name="view_navigation_close">Закрыто</string>
     <string name="view_navigation_open">Открыто</string>
     <string name="statistics_name">Имя</string>
@@ -29,4 +25,15 @@
     <string name="change_new_pass">Введите новый пароль</string>
     <string name="change_new_pass_again">Продублируйте новый пароль</string>
     <string name="submit">Отправить</string>
+    <string name="delete">Удалить</string>
+    <string name="information_text">
+        Eat &amp; Go\n
+        \nВерсия: 1.0
+        \nEmail: eatandgo@.com
+        \nТелефон: +38 (063) 841-32-56
+    </string>
+    <string name="registration_email">Введите email</string>
+    <string name="registration_pass">Введите пароль</string>
+    <string name="registration_pass_again">Продублируйте пароль</string>
+    <string name="statistics_date">Дата</string>
 </resources>

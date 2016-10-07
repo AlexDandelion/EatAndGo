@@ -8,9 +8,9 @@
     <string name="feeding_time_text_view">Time</string>
 
     <string name="grams">grams</string>
-    <string name="grams_interval">50 > 300</string>
+    <string name="grams_interval" translatable="false">50 > 300</string>
     <string name="hours">hours</string>
-    <string name="hours_interval">01 – 24</string>
+    <string name="hours_interval" translatable="false">01 – 24</string>
 
     <string name="change_current_pass">Enter current password</string>
     <string name="change_new_pass">Enter new password</string>
@@ -23,6 +23,7 @@
     <string name="statistics_name">Name</string>
     <string name="statistics_weight">Weight</string>
     <string name="statistics_period">Period</string>
+    <string name="statistics_date">Date</string>
 
     <string name="change_name">Change name</string>
     <string name="change_photo">Change photo</string>
@@ -47,6 +48,6 @@
         Eat &amp; Go\n
         \nVersion: 1.0
         \nEmail: eatandgo@.com
-        \nTelephone: 911
+        \nTelephone: +38 (063) 841-32-56
     </string>
 </resources>

@@ -3,7 +3,7 @@
     <dimen name="navigation_header_height">192dp</dimen>
     <dimen name="fragments_header_height">30dp</dimen>
 
-    <dimen name="card_view_titles_text_size">23sp</dimen>
+    <dimen name="card_view_titles_text_size">20sp</dimen>
     <dimen name="card_view_text_size">17sp</dimen>
     <dimen name="card_view_elevation">2dp</dimen>
     <dimen name="card_view_layout_margin_horizontal">12dp</dimen>
