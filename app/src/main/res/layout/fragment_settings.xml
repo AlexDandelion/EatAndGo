@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/background">
+    android:background="@mipmap/background"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/settingsHeaderText"
@@ -10,71 +11,63 @@
         android:text="@string/settings" />
 
     <LinearLayout
+        android:id="@+id/settingsPasswordLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/settingsHeaderText"
         android:layout_margin="@dimen/custom_linear_layout_margin"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:id="@+id/settingsPasswordLayout"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/settingsPassword"
+            style="@style/TableTextViewTheme"
+            android:text="@string/change_password" />
+
+        <ImageView
+            android:id="@+id/settingsPasswordImage"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/custom_linear_layout_inner_margin"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/settingsPassword"
-                style="@style/TableTextViewTheme"
-                android:text="@string/change_password" />
-
-            <ImageView
-                android:id="@+id/settingsPasswordImage"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:src="@mipmap/ic_lock_open" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/settingsProfileLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/custom_linear_layout_inner_margin"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/settingsTheme"
-                style="@style/TableTextViewTheme"
-                android:text="@string/profile" />
-
-            <ImageView
-                android:id="@+id/settingsThemeImage"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:src="@mipmap/ic_cat" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/settingsInfoLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/custom_linear_layout_inner_margin"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/settingsInfo"
-                style="@style/TableTextViewTheme"
-                android:text="@string/information" />
-
-            <ImageView
-                android:id="@+id/settingsAgeImage"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:src="@mipmap/ic_information_outline" />
-        </LinearLayout>
+            android:layout_weight="0.5"
+            android:src="@mipmap/ic_lock_open" />
     </LinearLayout>
 
-</RelativeLayout>
+    <LinearLayout
+        android:id="@+id/settingsProfileLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/custom_linear_layout_margin"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/settingsTheme"
+            style="@style/TableTextViewTheme"
+            android:text="@string/profile" />
+
+        <ImageView
+            android:id="@+id/settingsThemeImage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:src="@mipmap/ic_cat" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/settingsInfoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/custom_linear_layout_margin"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/settingsInfo"
+            style="@style/TableTextViewTheme"
+            android:text="@string/information" />
+
+        <ImageView
+            android:id="@+id/settingsAgeImage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:src="@mipmap/ic_information_outline" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -7,8 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.dandelion.eatandgo.Constants;
-import com.dandelion.eatandgo.fragments.DialogScheduleFragment;
 import com.dandelion.eatandgo.listeners.CallbackListener;
 import com.dandelion.eatandgo.R;
 import com.dandelion.eatandgo.models.ScheduleItem;
@@ -18,11 +16,11 @@ import java.util.List;
 public class ScheduleListAdapter extends
         RecyclerView.Adapter<ScheduleListAdapter.ScheduleViewHolder> {
 
-    private static CallbackListener listener;
+    private CallbackListener listener;
     private List<ScheduleItem> data;
 
     public ScheduleListAdapter(CallbackListener listener, List<ScheduleItem> data) {
-        ScheduleListAdapter.listener = listener;
+        this.listener = listener;
         this.data = data;
     }
 
@@ -45,7 +43,7 @@ public class ScheduleListAdapter extends
         return data.size();
     }
 
-    public static class ScheduleViewHolder extends RecyclerView.ViewHolder
+    public class ScheduleViewHolder extends RecyclerView.ViewHolder
             implements View.OnLongClickListener {
 
         private CardView cardView;
@@ -63,8 +61,7 @@ public class ScheduleListAdapter extends
 
         @Override
         public boolean onLongClick(View view) {
-            new DialogScheduleFragment().show(listener.callback(),
-                    Constants.DIALOG_SCHEDULE);
+            listener.callback(getAdapterPosition());
             return true;
         }
     }

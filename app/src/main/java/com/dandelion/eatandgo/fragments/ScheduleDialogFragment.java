@@ -11,8 +11,22 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.dandelion.eatandgo.R;
+import com.dandelion.eatandgo.listeners.NewListener;
 
-public class DialogScheduleFragment extends DialogFragment implements View.OnClickListener {
+public class ScheduleDialogFragment extends DialogFragment implements View.OnClickListener {
+
+    private static NewListener listener;
+    private EditText dialogGrams;
+    private EditText dialogHours;
+
+    public static ScheduleDialogFragment getInstance(NewListener listener) {
+
+        ScheduleDialogFragment fragment = new ScheduleDialogFragment();
+
+        ScheduleDialogFragment.listener = listener;
+
+        return fragment;
+    }
 
     @Nullable
     @Override
@@ -22,8 +36,8 @@ public class DialogScheduleFragment extends DialogFragment implements View.OnCli
 
         getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
 
-        EditText dialogGrams = (EditText) view.findViewById(R.id.dialogGrams);
-        EditText dialogHours = (EditText) view.findViewById(R.id.dialogHours);
+        dialogGrams = (EditText) view.findViewById(R.id.dialogGrams);
+        dialogHours = (EditText) view.findViewById(R.id.dialogHours);
 
         TextView dialogSubmit = (TextView) view.findViewById(R.id.dialogSubmit);
         dialogSubmit.setOnClickListener(this);
@@ -39,10 +53,15 @@ public class DialogScheduleFragment extends DialogFragment implements View.OnCli
         switch (view.getId()) {
             case R.id.dialogSubmit:
 //                добавляем данные в CardView и отправляем на сервер
+                listener.itemCallback(dialogGrams.getText().toString(), dialogHours.getText().toString());
+                dismiss();
                 break;
             case R.id.dialogDelete:
 //                удаляем выбранную CardView
+                dismiss();
                 break;
         }
     }
+
+
 }

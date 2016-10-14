@@ -38,14 +38,6 @@
                 android:text="@string/statistics_weight" />
 
             <TextView
-                android:id="@+id/statisticsTime"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/statistics_period" />
-
-            <TextView
                 android:id="@+id/statisticsDate"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"

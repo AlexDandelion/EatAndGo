@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/background">
+    android:background="@mipmap/background"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/changePassHeaderText"
@@ -14,8 +15,7 @@
         android:id="@+id/changeCurrentPassTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/changePassHeaderText"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
         android:layout_marginTop="@dimen/registration_fragment_text_view_margin_top"
         android:text="@string/change_current_pass"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -25,8 +25,7 @@
         android:id="@+id/changeCurrentPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/changeCurrentPassTextView"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
         android:layout_margin="@dimen/registration_fragment_edit_text_margin"
         android:background="@mipmap/substrate"
         android:ems="10"
@@ -37,8 +36,7 @@
         android:id="@+id/changeNewPassTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/changeCurrentPass"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
         android:layout_marginTop="@dimen/registration_fragment_text_view_margin_top"
         android:text="@string/change_new_pass"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -48,8 +46,7 @@
         android:id="@+id/changeNewPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/changeNewPassTextView"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
         android:layout_margin="@dimen/registration_fragment_edit_text_margin"
         android:background="@mipmap/substrate"
         android:ems="10"
@@ -60,10 +57,9 @@
         android:id="@+id/changeNewPassAgainTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/changeNewPass"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
         android:layout_marginTop="@dimen/registration_fragment_text_view_margin_top"
-        android:text="@string/change_new_pass_again"
+        android:text="@string/change_confirm_new_pass"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/colorWhite" />
 
@@ -71,8 +67,7 @@
         android:id="@+id/changeNewPassAgain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/changeNewPassAgainTextView"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
         android:layout_margin="@dimen/registration_fragment_edit_text_margin"
         android:background="@mipmap/substrate"
         android:ems="10"
@@ -83,23 +78,25 @@
         android:id="@+id/changePassSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/changeNewPassAgain"
-        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
         android:layout_marginTop="@dimen/registration_fragment_text_view_margin_top"
         android:text="@string/submit"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/colorWhite" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/changePassFloActBut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="@dimen/fab_margin"
-        android:clickable="true"
-        android:src="@mipmap/ic_undo"
-        app:backgroundTint="@color/colorWhite" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</RelativeLayout>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/changePassFloActBut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:clickable="true"
+            android:src="@mipmap/ic_undo"
+            app:backgroundTint="@color/colorWhite" />
+    </FrameLayout>
+
+</LinearLayout>

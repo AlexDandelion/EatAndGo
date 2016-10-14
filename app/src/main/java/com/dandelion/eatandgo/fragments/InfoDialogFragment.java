@@ -10,7 +10,7 @@ import android.view.Window;
 
 import com.dandelion.eatandgo.R;
 
-public class DialogInfoFragment extends DialogFragment {
+public class InfoDialogFragment extends DialogFragment {
 
     @Nullable
     @Override

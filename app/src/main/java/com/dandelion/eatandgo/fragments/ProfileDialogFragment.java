@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 
 import com.dandelion.eatandgo.R;
 
-public class DialogProfileFragment extends DialogFragment implements View.OnClickListener {
+public class ProfileDialogFragment extends DialogFragment implements View.OnClickListener {
 
     @Nullable
     @Override
@@ -35,9 +35,11 @@ public class DialogProfileFragment extends DialogFragment implements View.OnClic
         switch (view.getId()) {
             case R.id.profileName:
 //                изменяем имя
+                dismiss();
                 break;
             case R.id.profilePhoto:
 //                изменяем фото
+                dismiss();
                 break;
         }
     }

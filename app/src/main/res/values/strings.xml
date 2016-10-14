@@ -10,11 +10,12 @@
     <string name="grams">grams</string>
     <string name="grams_interval" translatable="false">50 > 300</string>
     <string name="hours">hours</string>
+    <string name="minutes">minutes</string>
     <string name="hours_interval" translatable="false">01 – 24</string>
 
-    <string name="change_current_pass">Enter current password</string>
-    <string name="change_new_pass">Enter new password</string>
-    <string name="change_new_pass_again">Enter new password again</string>
+    <string name="change_current_pass">Current password</string>
+    <string name="change_new_pass">New password</string>
+    <string name="change_confirm_new_pass">Confirm new password</string>
 
     <string name="registration_email">Enter the email</string>
     <string name="registration_pass">Enter the password</string>
@@ -31,6 +32,7 @@
 
     <string name="email" translatable="false">Email</string>
     <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
     <string name="registration">Registration</string>
 
     <string name="schedule">Schedule</string>
@@ -48,6 +50,6 @@
         Eat &amp; Go\n
         \nVersion: 1.0
         \nEmail: eatandgo@.com
-        \nTelephone: +38 (063) 841-32-56
+        \nTelephone: +38 (063) 777
     </string>
 </resources>

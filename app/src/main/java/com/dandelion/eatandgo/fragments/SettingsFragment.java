@@ -35,11 +35,11 @@ public class SettingsFragment extends BaseFragment implements View.OnClickListen
                 switchFragments(new ChangePassFragment());
                 break;
             case R.id.settingsProfileLayout:
-                new DialogProfileFragment().show(getActivity().getSupportFragmentManager(),
+                new ProfileDialogFragment().show(getActivity().getSupportFragmentManager(),
                         Constants.DIALOG_PROFILE);
                 break;
             case R.id.settingsInfoLayout:
-                new DialogInfoFragment().show(getActivity().getSupportFragmentManager(),
+                new InfoDialogFragment().show(getActivity().getSupportFragmentManager(),
                         Constants.DIALOG_INFO);
                 break;
         }

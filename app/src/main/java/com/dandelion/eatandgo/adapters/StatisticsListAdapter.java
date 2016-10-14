@@ -33,7 +33,6 @@ public class StatisticsListAdapter extends
     public void onBindViewHolder(StatisticsViewHolder holder, int position) {
         holder.type.setText(data.get(position).getType());
         holder.weight.setText(data.get(position).getWeight());
-        holder.time.setText(data.get(position).getTime());
         holder.date.setText(data.get(position).getDate());
     }
 
@@ -42,12 +41,11 @@ public class StatisticsListAdapter extends
         return data.size();
     }
 
-    public static class StatisticsViewHolder extends RecyclerView.ViewHolder {
+    public class StatisticsViewHolder extends RecyclerView.ViewHolder {
 
         private CardView cardView;
         private TextView type;
         private TextView weight;
-        private TextView time;
         private TextView date;
 
         public StatisticsViewHolder(View itemView) {
@@ -56,7 +54,6 @@ public class StatisticsListAdapter extends
             cardView = (CardView) itemView.findViewById(R.id.statisticsCardView);
             type = (TextView) itemView.findViewById(R.id.statisticsType);
             weight = (TextView) itemView.findViewById(R.id.statisticsWeight);
-            time = (TextView) itemView.findViewById(R.id.statisticsTime);
             date = (TextView) itemView.findViewById(R.id.statisticsDate);
         }
     }

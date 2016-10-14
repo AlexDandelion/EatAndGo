@@ -24,8 +24,8 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@mipmap/ic_plus"
         android:clickable="true"
+        android:src="@mipmap/ic_plus"
         app:backgroundTint="@color/colorWhite" />
 
 </RelativeLayout>

@@ -23,7 +23,6 @@
     <string name="registration">Регистрация</string>
     <string name="change_current_pass">Введите текущий пароль</string>
     <string name="change_new_pass">Введите новый пароль</string>
-    <string name="change_new_pass_again">Продублируйте новый пароль</string>
     <string name="submit">Отправить</string>
     <string name="delete">Удалить</string>
     <string name="information_text">
@@ -36,4 +35,7 @@
     <string name="registration_pass">Введите пароль</string>
     <string name="registration_pass_again">Продублируйте пароль</string>
     <string name="statistics_date">Дата</string>
+    <string name="change_confirm_new_pass">Подтвердите новый пароль</string>
+    <string name="confirm_password">Подтвердите пароль</string>
+    <string name="minutes">минуты</string>
 </resources>

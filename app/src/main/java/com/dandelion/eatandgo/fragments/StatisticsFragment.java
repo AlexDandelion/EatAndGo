@@ -49,13 +49,13 @@ public class StatisticsFragment extends BaseFragment implements View.OnClickList
     }
 
     private List<StatisticsItem> createMockStatisticsListData() {
-        data.add(new StatisticsItem("food", "150", "9 - 15", "11.06.16"));
-        data.add(new StatisticsItem("water", "10", "10 - 13", "11.07.16"));
-        data.add(new StatisticsItem("food", "20", "15 - 21", "12.07.16"));
-        data.add(new StatisticsItem("water", "90", "12 - 18", "12.05.16"));
-        data.add(new StatisticsItem("water", "40", "10 - 23", "13.07.16"));
-        data.add(new StatisticsItem("food", "70", "13 - 15", "13.07.16"));
-        data.add(new StatisticsItem("water", "65", "11 - 15", "14.07.16"));
+        data.add(new StatisticsItem("food", "150", "11.06.16"));
+        data.add(new StatisticsItem("water", "10", "11.07.16"));
+        data.add(new StatisticsItem("food", "20", "12.07.16"));
+        data.add(new StatisticsItem("water", "90", "12.05.16"));
+        data.add(new StatisticsItem("water", "40", "13.07.16"));
+        data.add(new StatisticsItem("food", "70", "13.07.16"));
+        data.add(new StatisticsItem("water", "65", "14.07.16"));
 
         return data;
     }
