@@ -2,30 +2,30 @@ package com.dandelion.eatandgo.models;
 
 public class StatisticsItem {
 
-    private String type;
-    private String weight;
+    private String foodWeight;
+    private String waterWeight;
     private String date;
 
-    public StatisticsItem(String type, String weight, String date) {
-        this.type = type;
-        this.weight = weight;
+    public StatisticsItem(String foodWeight, String waterWeight, String date) {
+        this.foodWeight = foodWeight;
+        this.waterWeight = waterWeight;
         this.date = date;
     }
 
-    public String getType() {
-        return type;
+    public String getFoodWeight() {
+        return foodWeight;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setFoodWeight(String foodWeight) {
+        this.foodWeight = foodWeight;
     }
 
-    public String getWeight() {
-        return weight;
+    public String getWaterWeight() {
+        return waterWeight;
     }
 
-    public void setWeight(String weight) {
-        this.weight = weight;
+    public void setWaterWeight(String waterWeight) {
+        this.waterWeight = waterWeight;
     }
 
     public String getDate() {

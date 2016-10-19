@@ -1,6 +1,5 @@
 package com.dandelion.eatandgo.adapters;
 
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,8 +30,8 @@ public class StatisticsListAdapter extends
 
     @Override
     public void onBindViewHolder(StatisticsViewHolder holder, int position) {
-        holder.type.setText(data.get(position).getType());
-        holder.weight.setText(data.get(position).getWeight());
+        holder.foodWeight.setText(data.get(position).getFoodWeight());
+        holder.waterWeight.setText(data.get(position).getWaterWeight());
         holder.date.setText(data.get(position).getDate());
     }
 
@@ -43,17 +42,15 @@ public class StatisticsListAdapter extends
 
     public class StatisticsViewHolder extends RecyclerView.ViewHolder {
 
-        private CardView cardView;
-        private TextView type;
-        private TextView weight;
+        private TextView foodWeight;
+        private TextView waterWeight;
         private TextView date;
 
         public StatisticsViewHolder(View itemView) {
             super(itemView);
 
-            cardView = (CardView) itemView.findViewById(R.id.statisticsCardView);
-            type = (TextView) itemView.findViewById(R.id.statisticsType);
-            weight = (TextView) itemView.findViewById(R.id.statisticsWeight);
+            foodWeight = (TextView) itemView.findViewById(R.id.statisticsFoodWeight);
+            waterWeight = (TextView) itemView.findViewById(R.id.statisticsWaterWeight);
             date = (TextView) itemView.findViewById(R.id.statisticsDate);
         }
     }

@@ -13,7 +13,7 @@ import com.dandelion.eatandgo.Constants;
 import com.dandelion.eatandgo.listeners.CallbackListener;
 import com.dandelion.eatandgo.R;
 import com.dandelion.eatandgo.adapters.ScheduleListAdapter;
-import com.dandelion.eatandgo.listeners.NewListener;
+import com.dandelion.eatandgo.listeners.ScheduleDialogListener;
 import com.dandelion.eatandgo.models.ScheduleItem;
 
 import java.util.ArrayList;
@@ -45,33 +45,24 @@ public class ScheduleFragment extends BaseFragment
     }
 
     private List<ScheduleItem> createMockScheduleListData() {
-        data.add(new ScheduleItem("130", "9:00"));
-        data.add(new ScheduleItem("200", "15:00"));
+        data.add(new ScheduleItem("130", "9", "15"));
+        data.add(new ScheduleItem("200", "14", "30"));
         return data;
-    }
-
-    private void changeRecyclerView(List<ScheduleItem> data) {
-        adapter.notifyDataSetChanged();
-//        recyclerView.setAdapter(new ScheduleListAdapter(this, data));
     }
 
     @Override
     public void onClick(View view) {
-        data.add(new ScheduleItem("add the grams", "add the time"));
-        changeRecyclerView(data);
+        data.add(new ScheduleItem("grams", "hours", "minutes"));
+        adapter.notifyDataSetChanged();
     }
 
     @Override
     public void callback(final int position) {
-//        new ScheduleDialogFragment().show(getActivity().getSupportFragmentManager(),
-//                Constants.DIALOG_SCHEDULE);
-
-        ScheduleDialogFragment.getInstance(new NewListener() {
+        ScheduleDialogFragment.getInstance(new ScheduleDialogListener() {
             @Override
-            public void itemCallback(String s1, String s2) {
-                data.set(position, new ScheduleItem(s1, s2));
+            public void itemCallback(String weight, String hours, String minutes) {
+                data.set(position, new ScheduleItem(weight, hours, minutes));
                 adapter.notifyDataSetChanged();
-//                recyclerView.setAdapter(new ScheduleListAdapter(ScheduleFragment.this, data));
             }
         }).show(getActivity().getSupportFragmentManager(),
                 Constants.DIALOG_SCHEDULE);

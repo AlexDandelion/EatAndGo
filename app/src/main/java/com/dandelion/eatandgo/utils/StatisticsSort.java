@@ -8,10 +8,6 @@ import java.util.List;
 
 public class StatisticsSort {
 
-    public static void typeSort(List<StatisticsItem> items) {
-        Collections.sort(items, new TypeComparator());
-    }
-
     public static void weightSort(List<StatisticsItem> items) {
         Collections.sort(items, new WeightComparator());
     }
@@ -20,20 +16,12 @@ public class StatisticsSort {
         Collections.sort(items, new DateComparator());
     }
 
-    private static class TypeComparator implements Comparator<StatisticsItem> {
-
-        @Override
-        public int compare(StatisticsItem first, StatisticsItem second) {
-            return first.getType().compareTo(second.getType());
-        }
-    }
-
     private static class WeightComparator implements Comparator<StatisticsItem> {
 
         @Override
         public int compare(StatisticsItem first, StatisticsItem second) {
-            Integer firstInt = Integer.parseInt(first.getWeight());
-            Integer secondInt = Integer.parseInt(second.getWeight());
+            Integer firstInt = Integer.parseInt(first.getFoodWeight());
+            Integer secondInt = Integer.parseInt(second.getFoodWeight());
             return firstInt.compareTo(secondInt);
         }
     }
@@ -45,17 +33,17 @@ public class StatisticsSort {
             String[] firstArr = first.getDate().split("\\.");
             String[] secondArr = second.getDate().split("\\.");
 
-            int res = firstArr[2].compareTo(secondArr[2]);
+            int res = secondArr[2].compareTo(firstArr[2]);
             if (res != 0) {
                 return res;
             }
 
-            res = firstArr[1].compareTo(secondArr[1]);
+            res = secondArr[1].compareTo(firstArr[1]);
             if (res != 0) {
                 return res;
             }
 
-            res = firstArr[0].compareTo(secondArr[0]);
+            res = secondArr[0].compareTo(firstArr[0]);
             if (res != 0) {
                 return res;
             }

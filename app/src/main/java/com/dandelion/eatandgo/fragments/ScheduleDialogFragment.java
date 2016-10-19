@@ -11,18 +11,18 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.dandelion.eatandgo.R;
-import com.dandelion.eatandgo.listeners.NewListener;
+import com.dandelion.eatandgo.listeners.ScheduleDialogListener;
 
 public class ScheduleDialogFragment extends DialogFragment implements View.OnClickListener {
 
-    private static NewListener listener;
+    private static ScheduleDialogListener listener;
     private EditText dialogGrams;
     private EditText dialogHours;
+    private EditText dialogMinutes;
 
-    public static ScheduleDialogFragment getInstance(NewListener listener) {
+    public static ScheduleDialogFragment getInstance(ScheduleDialogListener listener) {
 
         ScheduleDialogFragment fragment = new ScheduleDialogFragment();
-
         ScheduleDialogFragment.listener = listener;
 
         return fragment;
@@ -38,6 +38,7 @@ public class ScheduleDialogFragment extends DialogFragment implements View.OnCli
 
         dialogGrams = (EditText) view.findViewById(R.id.dialogGrams);
         dialogHours = (EditText) view.findViewById(R.id.dialogHours);
+        dialogMinutes = (EditText) view.findViewById(R.id.dialogMinutes);
 
         TextView dialogSubmit = (TextView) view.findViewById(R.id.dialogSubmit);
         dialogSubmit.setOnClickListener(this);
@@ -53,7 +54,8 @@ public class ScheduleDialogFragment extends DialogFragment implements View.OnCli
         switch (view.getId()) {
             case R.id.dialogSubmit:
 //                добавляем данные в CardView и отправляем на сервер
-                listener.itemCallback(dialogGrams.getText().toString(), dialogHours.getText().toString());
+                listener.itemCallback(dialogGrams.getText().toString(),
+                        dialogHours.getText().toString(), dialogMinutes.getText().toString());
                 dismiss();
                 break;
             case R.id.dialogDelete:

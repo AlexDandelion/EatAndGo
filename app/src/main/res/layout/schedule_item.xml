@@ -71,12 +71,29 @@
                     android:textSize="@dimen/card_view_text_size" />
 
                 <TextView
-                    android:id="@+id/feedingTime"
+                    android:id="@+id/feedingHours"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
+                    android:layout_weight="0.5"
+                    android:gravity="center|end"
                     android:hint="@string/hours"
+                    android:textSize="@dimen/card_view_text_size" />
+
+                <TextView
+                    android:id="@+id/feedingColon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center|start"
+                    android:text=":"
+                    android:textSize="@dimen/card_view_text_size" />
+
+                <TextView
+                    android:id="@+id/feedingMinutes"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:gravity="center|start"
+                    android:hint="@string/minutes"
                     android:textSize="@dimen/card_view_text_size" />
             </LinearLayout>
         </LinearLayout>

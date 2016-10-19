@@ -10,11 +10,26 @@
         style="@style/HeaderTextViewTheme"
         android:text="@string/settings" />
 
+    <ImageView
+        android:id="@+id/settingsPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/photo_test"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/settingsName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/colorWhite"
+        android:text="Fluffy" />
+
     <LinearLayout
         android:id="@+id/settingsPasswordLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/custom_linear_layout_margin"
+        android:layout_margin="@dimen/custom_linear_layout_item_margin"
         android:orientation="horizontal">
 
         <TextView
@@ -34,7 +49,7 @@
         android:id="@+id/settingsProfileLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/custom_linear_layout_margin"
+        android:layout_margin="@dimen/custom_linear_layout_item_margin"
         android:orientation="horizontal">
 
         <TextView
@@ -54,7 +69,7 @@
         android:id="@+id/settingsInfoLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/custom_linear_layout_margin"
+        android:layout_margin="@dimen/custom_linear_layout_item_margin"
         android:orientation="horizontal">
 
         <TextView

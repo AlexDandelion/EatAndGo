@@ -3,12 +3,13 @@ package com.dandelion.eatandgo.models;
 public class ScheduleItem {
 
     private String foodWeight;
-    private String feedingTime;
+    private String feedingHours;
+    private String feedingMinutes;
 
-    public ScheduleItem(String foodWeight, String feedingTime) {
-
+    public ScheduleItem(String foodWeight, String feedingHours, String feedingMinutes) {
         this.foodWeight = foodWeight;
-        this.feedingTime = feedingTime;
+        this.feedingHours = feedingHours;
+        this.feedingMinutes = feedingMinutes;
     }
 
     public String getFoodWeight() {
@@ -19,11 +20,19 @@ public class ScheduleItem {
         this.foodWeight = foodWeight;
     }
 
-    public String getFeedingTime() {
-        return feedingTime;
+    public String getFeedingHours() {
+        return feedingHours;
     }
 
-    public void setFeedingTime(String feedingTime) {
-        this.feedingTime = feedingTime;
+    public void setFeedingHours(String feedingHours) {
+        this.feedingHours = feedingHours;
+    }
+
+    public String getFeedingMinutes() {
+        return feedingMinutes;
+    }
+
+    public void setFeedingMinutes(String feedingMinutes) {
+        this.feedingMinutes = feedingMinutes;
     }
 }

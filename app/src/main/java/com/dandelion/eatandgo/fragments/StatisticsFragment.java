@@ -21,7 +21,7 @@ import java.util.List;
 public class StatisticsFragment extends BaseFragment implements View.OnClickListener {
 
     private List<StatisticsItem> data;
-    private RecyclerView recyclerView;
+    private StatisticsListAdapter adapter;
 
     @Nullable
     @Override
@@ -30,13 +30,12 @@ public class StatisticsFragment extends BaseFragment implements View.OnClickList
         View view = inflater.inflate(R.layout.fragment_statistics, container, false);
 
         data = new ArrayList<>();
+        adapter = new StatisticsListAdapter(createMockStatisticsListData());
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.statisticsRecyclerView);
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.statisticsRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setAdapter(new StatisticsListAdapter(createMockStatisticsListData()));
+        recyclerView.setAdapter(adapter);
 
-        TextView headerType = (TextView) view.findViewById(R.id.statisticsType);
-        headerType.setOnClickListener(this);
         TextView headerWeight = (TextView) view.findViewById(R.id.statisticsWeight);
         headerWeight.setOnClickListener(this);
         TextView headerDate = (TextView) view.findViewById(R.id.statisticsDate);
@@ -49,13 +48,13 @@ public class StatisticsFragment extends BaseFragment implements View.OnClickList
     }
 
     private List<StatisticsItem> createMockStatisticsListData() {
-        data.add(new StatisticsItem("food", "150", "11.06.16"));
-        data.add(new StatisticsItem("water", "10", "11.07.16"));
-        data.add(new StatisticsItem("food", "20", "12.07.16"));
-        data.add(new StatisticsItem("water", "90", "12.05.16"));
-        data.add(new StatisticsItem("water", "40", "13.07.16"));
-        data.add(new StatisticsItem("food", "70", "13.07.16"));
-        data.add(new StatisticsItem("water", "65", "14.07.16"));
+        data.add(new StatisticsItem("150", "70", "11.07.16"));
+        data.add(new StatisticsItem("210", "100", "10.07.16"));
+        data.add(new StatisticsItem("90", "40", "12.07.16"));
+        data.add(new StatisticsItem("140", "110", "15.07.16"));
+        data.add(new StatisticsItem("135", "40", "09.07.16"));
+        data.add(new StatisticsItem("190", "80", "13.07.16"));
+        data.add(new StatisticsItem("80", "65", "14.07.16"));
 
         return data;
     }
@@ -63,17 +62,13 @@ public class StatisticsFragment extends BaseFragment implements View.OnClickList
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.statisticsType:
-                StatisticsSort.typeSort(data);
-                recyclerView.setAdapter(new StatisticsListAdapter(data));
-                break;
             case R.id.statisticsWeight:
                 StatisticsSort.weightSort(data);
-                recyclerView.setAdapter(new StatisticsListAdapter(data));
+                adapter.notifyDataSetChanged();
                 break;
             case R.id.statisticsDate:
                 StatisticsSort.dateSort(data);
-                recyclerView.setAdapter(new StatisticsListAdapter(data));
+                adapter.notifyDataSetChanged();
                 break;
             case R.id.statisticsFloActBut:
                 switchFragments(new ChartFragment());

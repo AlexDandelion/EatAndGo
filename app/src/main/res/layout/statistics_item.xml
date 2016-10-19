@@ -18,33 +18,67 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/card_view_linear_layout_height"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/statisticsType"
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/statistics_name" />
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/statisticsWeight"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/statistics_weight" />
+                <TextView
+                    android:id="@+id/statisticsFood"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/statistics_food" />
 
-            <TextView
-                android:id="@+id/statisticsDate"
+                <TextView
+                    android:id="@+id/statisticsWater"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/statistics_water" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/statistics_date" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/statisticsFoodWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/statistics_food_weight" />
+
+                <TextView
+                    android:id="@+id/statisticsWaterWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/statistics_water_weight" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/statisticsDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/statistics_date" />
+
+            </LinearLayout>
         </LinearLayout>
-
     </android.support.v7.widget.CardView>
 </LinearLayout>

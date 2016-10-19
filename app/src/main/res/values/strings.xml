@@ -21,8 +21,12 @@
     <string name="registration_pass">Enter the password</string>
     <string name="registration_pass_again">Enter the password again</string>
 
-    <string name="statistics_name">Name</string>
+    <string name="statistics_name">Type</string>
+    <string name="statistics_food">food</string>
+    <string name="statistics_water">water</string>
     <string name="statistics_weight">Weight</string>
+    <string name="statistics_food_weight">food weight</string>
+    <string name="statistics_water_weight">water weight</string>
     <string name="statistics_period">Period</string>
     <string name="statistics_date">Date</string>
 

@@ -35,7 +35,8 @@ public class ScheduleListAdapter extends
     @Override
     public void onBindViewHolder(ScheduleViewHolder holder, int position) {
         holder.foodWeight.setText(data.get(position).getFoodWeight());
-        holder.feedingTime.setText(data.get(position).getFeedingTime());
+        holder.feedingHours.setText(data.get(position).getFeedingHours());
+        holder.feedingMinutes.setText(data.get(position).getFeedingMinutes());
     }
 
     @Override
@@ -48,7 +49,8 @@ public class ScheduleListAdapter extends
 
         private CardView cardView;
         private TextView foodWeight;
-        private TextView feedingTime;
+        private TextView feedingHours;
+        private TextView feedingMinutes;
 
         public ScheduleViewHolder(View itemView) {
             super(itemView);
@@ -56,7 +58,8 @@ public class ScheduleListAdapter extends
             cardView = (CardView) itemView.findViewById(R.id.scheduleCardView);
             cardView.setOnLongClickListener(this);
             foodWeight = (TextView) itemView.findViewById(R.id.foodWeight);
-            feedingTime = (TextView) itemView.findViewById(R.id.feedingTime);
+            feedingHours = (TextView) itemView.findViewById(R.id.feedingHours);
+            feedingMinutes = (TextView) itemView.findViewById(R.id.feedingMinutes);
         }
 
         @Override

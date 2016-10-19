@@ -38,4 +38,8 @@
     <string name="change_confirm_new_pass">Підтвердіть новий пароль</string>
     <string name="confirm_password">Підтвердіть пароль</string>
     <string name="minutes">хвилини</string>
+    <string name="statistics_food">їжа</string>
+    <string name="statistics_food_weight">вага їжі</string>
+    <string name="statistics_water">вода</string>
+    <string name="statistics_water_weight">вага води</string>
 </resources>
